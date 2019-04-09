@@ -66,7 +66,7 @@ function formatHTML(html) {
 
 // // 主函数
 function main() {
-  const data = require('../src/data');
+  const data = require('../data');
   const html = combine(formatData, sortByDate, generateHTML, formatHTML)(data);
 
   const filename = path.join(__dirname, '..', 'index.html');
