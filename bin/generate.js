@@ -1,11 +1,10 @@
-'use strict';
+#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
-const tjs = require('../src/utils/templateEngine');
+const tjs = require('../utils/templateEngine');
 
-// combine
-const combine = (...fns) => fns.reduce((a, b) => (...args) => b(a(...args)));
+const combine = require('../utils/common').combine;
 
 // 格式化数据
 function formatData(data) {
@@ -64,7 +63,7 @@ function formatHTML(html) {
   return html.replace(/>\s+</g, '><');
 }
 
-// // 主函数
+// 主函数
 function main() {
   const data = require('../data');
   const html = combine(formatData, sortByDate, generateHTML, formatHTML)(data);

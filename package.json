@@ -4,7 +4,8 @@
   "description": "my own timeline",
   "main": "index.js",
   "bin": {
-    "timeline": "generate.js"
+    "generate": "generate.js",
+    "add": "add.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
