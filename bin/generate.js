@@ -71,13 +71,14 @@ function main() {
   const filename = path.join(__dirname, '..', 'index.html');
 
   console.log('[generate]', 'start writing file');
-  fs.writeFile(filename, html, 'utf8', (err) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log('[generate]', 'finish to write file => index.html');
-    }
-  })
+
+  try {
+    fs.writeFileSync(filename, html, 'utf8')
+  } catch(err) {
+    console.error(err);
+  }
+
+  console.log('[generate]', 'finish to write file => index.html');
 }
 
 main();
