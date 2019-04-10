@@ -45,7 +45,7 @@ function generateHTML(data) {
           <li class="data-li">
             <span class="li-title"><%= item.name %></span>
             <% for (const link of item.link) { %>
-              <a class="li-link" href="<%= link %>" target="_blank">相关链接</a>
+              <a class="li-link" href="<%= link %>" target="_blank">N</a>
             <% } %>
           </li>
         <% } %>
