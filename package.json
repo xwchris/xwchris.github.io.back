@@ -4,13 +4,12 @@
   "description": "my own timeline",
   "main": "index.js",
   "bin": {
-    "generate": "generate.js",
-    "add": "add.js"
+    "tl-generate": "./bin/generate.js",
+    "tl-add": "./bin/add.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "add": "node bin/add.js",
-    "deploy": "node bin/generate && git add . && git commit -m 'add new item' && git push"
+    "deploy": "tl-generate && git add . && git commit -m 'add new item' && git push"
   },
   "repository": {
     "type": "git",

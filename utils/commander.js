@@ -1,5 +1,6 @@
 function Commander() {
   this.innerVersion = '';
+  this.args = [];
   this.options = new Map();
 }
 
@@ -38,6 +39,8 @@ Commander.prototype.parse = function(argv) {
   });
 
   indexs.push(args.length);
+
+  this.args = args.slice(0, indexs[0]);
 
   for (let i = 0; i < indexs.length - 1; i++) {
     const pos = indexs[i];

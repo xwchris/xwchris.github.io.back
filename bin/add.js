@@ -10,7 +10,6 @@ const combine = require('../utils/common').combine;
 commander
   .version('1.0.0')
   .option('-d, --date', 'the date wanted to add')
-  .option('-n, --name', 'name of the item to add')
   .option('-l, --link', 'links of item to add')
   .parse(process.argv);
 
@@ -23,8 +22,11 @@ function formatDate(date) {
 }
 
 function createItem(commander) {
-  let { date, name, link } = commander;
+  let { date, args, link } = commander;
+  const name = args && args.length > 0 ? args[0] : '';
+
   date = formatDate(date);
+
   return {
     id: date,
     data: [{ name, link }]
